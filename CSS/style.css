@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap');
+
+:root {
+    --font: "Encode Sans", sans-serif;
+    --black: #191111;
+    --white: #f1f1f1;
+    --gray: #6c6c6c;
+    --purple: #730b9f;
+    --violet: #b62ff0;
+    --light-violet: #e099ff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+h1, label {
+    color: var(--black);
+}

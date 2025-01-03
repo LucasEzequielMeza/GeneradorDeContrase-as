@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <main class="container">
+        <h1>Password Generator</h1>
+        <div class="options">
+            <div class="range_options">
+                <div class="range_label">
+                    <label for="lenght">Lenght:</label>
+                    <span id="lenghtValue">10</span>
+                </div>
+                <input type="range" id="lenght" min="8" max="32" value="10">
+            </div>
+            <div class="options_inputs">
+                <div class="inputs_inputs-box">
+                    <input type="checkbox" id="uppercase" checked>
+                    <label for="uppercase" class="input-checkbox">Uppercase <span>(A-Z)</span></label>
+                </div>
+                <div class="inputs_inputs-box">
+                    <input type="checkbox" id="lowercase" checked>
+                    <label for="lowercase" class="input-checkbox">Lowercase <span>(a-z)</span></label>
+                </div>
+                <div class="inputs_inputs-box">
+                    <input type="checkbox" id="numbers" checked>
+                    <label for="numbers" class="input-checkbox">Numbers <span>(0-9)</span></label>
+                </div>
+                <div class="inputs_inputs-box">
+                    <input type="checkbox" id="simbols" checked>
+                    <label for="simbols" class="input-checkbox">Simbols <span>(!@%$#/()><;,.¡?[]{}+-*_)</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="password-box">
+            <input type="text" id="password" class="input-text" readonly>
+            <button class="btn-copy" id="copyBtn"><i class="ri-clipboard-fill">Copy</i></button>
+        </div>
+        <button class="btn-trigger" id="triggerBtn"><i class="ri-lock-password-fill">Trigger</i></button>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+    <script src="./JS/main.js"></script>
+</body>
+</html>
