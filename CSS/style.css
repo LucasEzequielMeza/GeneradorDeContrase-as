@@ -8,6 +8,8 @@
     --purple: #730b9f;
     --violet: #b62ff0;
     --light-violet: #e099ff;
+    --bg-gradient: hsla(0, 100%, 50%, 1);
+    --bg-shadow: rgba(35, 35, 49, 0.37);
 }
 
 * {
@@ -17,15 +19,11 @@
     font-family: var(--font);
 }
 
-h1, label {
-    color: var(--black);
-}
-
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: hsla(0, 100%, 50%, 1);
+    background-color: var(--bg-gradient);
     background-image:
         radial-gradient(at 38% 12%, hsla(359, 63%, 66%, 1) 0px, transparent 50%),
         radial-gradient(at 95% 11%, hsla(296, 91%, 56%, 1) 0px, transparent 50%),
@@ -38,15 +36,25 @@ body {
     height: 100vh;
 }
 
+h1, label {
+    color: var(--black);
+}
+
 .container {
     width: 600px;
     height: 400px;
     background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(35, 35, 49, 0.37);
+    box-shadow: 0 8px 32px 0 var(--bg-shadow);
     backdrop-filter: blur(4px);
     border-radius: 10px;
     padding: 20px;
     text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px 0 var(--bg-shadow);
 }
 
 h1 {
@@ -63,6 +71,7 @@ h1 {
 }
 
 .range_options {
+    display: flex;
     flex-direction: column;
     width: 95%;
     gap: 10px;
@@ -80,6 +89,11 @@ h1 {
 .range_label label,
 .range_label span {
     font-size: 1.5em;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 10px;
 }
 
 .options_inputs {
@@ -127,11 +141,11 @@ h1 {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 input[type="checkbox"]:checked + .input-checkbox::before {
     background-color: var(--purple);
-    border-radius: var(--purple);
 }
 
 .input-checkbox::after {
@@ -159,12 +173,14 @@ input[type="checkbox"]:checked + .input-checkbox::after {
 
 .input-text {
     border: none;
-    color: var(--white);
+    color: var(--black);
     border-radius: 5px;
     outline: none;
     width: 60%;
     font-size: 1em;
     padding-left: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 button {
@@ -176,6 +192,7 @@ button {
     align-items: center;
     gap: 8px;
     padding: 12px;
+    display: flex;
 }
 
 .btn-copy {
@@ -183,10 +200,12 @@ button {
     font-size: 1em;
     background-color: var(--violet);
     color: var(--white);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .btn-copy:hover {
     background-color: #b62ff099;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .btn-trigger {
@@ -194,8 +213,10 @@ button {
     background-color: var(--purple);
     color: var(--white);
     font-size: 1.2em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .btn-trigger:hover {
     background-color: var(--violet);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
